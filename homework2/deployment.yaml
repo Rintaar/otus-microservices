@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otus-hw2-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: otus-hw2
+  template:
+    metadata:
+      labels:
+        app: otus-hw2
+    spec:
+      containers:
+        - name: otus-hw2
+          image: yalekseev1994/microservice-study:1.0.0-SNAPSHOT
+          ports:
+            - containerPort: 8000
+          livenessProbe:
+            httpGet:
+              port: 8000
+              path: /health
+            initialDelaySeconds: 10
+            periodSeconds: 2
+            timeoutSeconds: 1
+          readinessProbe:
+            httpGet:
+              port: 8000
+              path: /health
+            initialDelaySeconds: 10
+            periodSeconds: 2
