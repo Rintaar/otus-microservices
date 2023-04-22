@@ -1,0 +1,32 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: otus-homework3-db
+spec:
+  template:
+    metadata:
+      name: otus-homework3-db
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: post-install-job
+          image: postgres:latest
+          env:
+            - name: DATABASE_URI
+              valueFrom:
+                secretKeyRef:
+                  name: otus-homework3-secret
+                  key: DATABASE_URI
+            - name: DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: otus-homework3-config
+                  key: DATABASE_NAME
+          command:
+            - sh
+            - "-c"
+            - |
+              psql $DATABASE_URI <<'EOF'
+                create table users (id serial primary key, username varchar, firstName varchar, lastName varchar, email varchar, phone varchar);
+              EOF
+  backoffLimit: 2
