@@ -12,5 +12,5 @@ metadata:
   name: otus-homework3-secret
 type: Opaque
 data:
-  DATABASE_URI: amRiYzpwb3N0Z3Jlc3FsOi8vcHNxbC1wb3N0Z3Jlc3FsOjU0MzIvcG9zdGdyZXM=
+  DATABASE_URI: amRiYzpwb3N0Z3Jlc3FsOi8vcG9zdGdyZXMtcG9zdGdyZXNxbDo1NDMyL3Bvc3RncmVz
   DATABASE_PASSWORD: cG9zdGdyZXM=

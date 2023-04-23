@@ -10,7 +10,6 @@ metadata:
          return 403 "Do not go, Stalker!";
       }
 spec:
-  ingressClassName: nginx
   rules:
     - host: arch.homework
       http:
