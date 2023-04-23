@@ -26,5 +26,10 @@ Ingress-ы должны также вести на url arch.homework/ (как и
 +5 балла за шаблонизацию приложения в helm чартах
 
 Выполнение
-1. ссылка на гит
-2. helm install psql bitnami/postgresql -f values.yaml
+1. https://github.com/Rintaar/otus-microservices/tree/master/homework3
+2. helm install psql bitnami/postgresql -f ./scripts/values.yaml
+3. Манифесты
+   1. kubectl apply -f ./scripts/app-config.yaml 
+   2. kubectl apply -f ./scripts/deployment.yaml 
+   3. kubectl apply -f ./scripts/service.yaml 
+   4. kubectl apply -f ./scripts/ingress.yaml
