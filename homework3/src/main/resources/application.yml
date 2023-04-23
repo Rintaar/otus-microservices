@@ -9,3 +9,5 @@ spring:
     allow-circular-references: true
   jpa:
     database: postgresql
+    hibernate:
+      ddl-auto: update

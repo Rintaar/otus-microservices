@@ -1,14 +1,13 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: otus-hw2-ingress
+  name: otus-homework3-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
     kubernetes.io/ingress.class: "nginx"
     nginx.org/server-snippets: |
       location /admin {
          deny all;
-         return 403 "Go your own way, Stalker!";
+         return 403 "Do not go, Stalker!";
       }
 spec:
   ingressClassName: nginx
@@ -20,6 +19,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: otus-hw2-service
+                name: otus-homework3-service
                 port:
                   number: 8000

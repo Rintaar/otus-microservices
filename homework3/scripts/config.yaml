@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: otus-homework3-config
+data:
+  DATABASE_USER: postgres
+  DATABASE_NAME: postgres
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: otus-homework3-secret
+type: Opaque
+data:
+  DATABASE_URI: amRiYzpwb3N0Z3Jlc3FsOi8vcHNxbC1wb3N0Z3Jlc3FsOjU0MzIvcG9zdGdyZXM=
+  DATABASE_PASSWORD: cG9zdGdyZXM=

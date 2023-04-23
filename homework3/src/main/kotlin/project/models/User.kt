@@ -8,15 +8,15 @@ data class User(
     @Id
     @GeneratedValue
     @Column(name = "id")
-    val id: Long? = null,
+    var id: Long? = null,
     @Column(name = "username")
-    val username: String? = null,
+    var username: String? = null,
     @Column(name = "firstName")
-    val firstName: String? = null,
+    var firstName: String? = null,
     @Column(name = "lastName")
-    val lastName: String? = null,
+    var lastName: String? = null,
     @Column(name = "email")
-    val email: String? = null,
+    var email: String? = null,
     @Column(name = "phone")
-    val phone: String? = null,
+    var phone: String? = null,
 )

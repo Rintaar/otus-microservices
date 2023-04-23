@@ -1,32 +1,25 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: otus-homework3-db
+  name: "homework3-postgres-job"
 spec:
   template:
     metadata:
-      name: otus-homework3-db
+      name: "homework3-postgres-job"
     spec:
       restartPolicy: Never
       containers:
         - name: post-install-job
           image: postgres:latest
           env:
-            - name: DATABASE_URI
-              valueFrom:
-                secretKeyRef:
-                  name: otus-homework3-secret
-                  key: DATABASE_URI
-            - name: DATABASE_NAME
-              valueFrom:
-                configMapKeyRef:
-                  name: otus-homework3-config
-                  key: DATABASE_NAME
+            - name: POSTGRES_PASSWORD
+              value: postgres
           command:
             - sh
             - "-c"
             - |
-              psql $DATABASE_URI <<'EOF'
-                create table users (id serial primary key, username varchar, firstName varchar, lastName varchar, email varchar, phone varchar);
-              EOF
-  backoffLimit: 2
+              psql postgres://postgres:postgres@hw2-postgresql/postgres <<'EOF'
+                DROP SCHEMA public CASCADE;
+                CREATE SCHEMA public;
+                create table if not exists users (id serial primary key, first_name varchar(100), last_name varchar(100), email varchar(50), phone varchar(25));
+                alter table users owner to otus_hw2;
