@@ -29,13 +29,14 @@ Ingress-ы должны также вести на url arch.homework/ (как и
 1. https://github.com/Rintaar/otus-microservices/tree/master/homework3
 2. helm install postgres bitnami/postgresql -f ./scripts/values.yaml
 3. kubectl apply -f ./scripts/config.yaml -f ./scripts/deployment.yaml -f ./scripts/service.yaml -f ./scripts/ingress.yaml
+4. Postman: https://github.com/Rintaar/otus-microservices/blob/master/homework3/postman/homework3.postman_collection.json
 
 Удаление:
-helm delete postgres
-kubectl delete deployment otus-homework3-deployment  
-kubectl delete service otus-homework3-service  
-kubectl delete secrets otus-homework3-secret
-kubectl delete configmap otus-homework3-config
-kubectl delete ingress otus-homework3-ingress
+* helm delete postgres
+* kubectl delete deployment otus-homework3-deployment  
+* kubectl delete service otus-homework3-service  
+* kubectl delete secrets otus-homework3-secret
+* kubectl delete configmap otus-homework3-config
+* kubectl delete ingress otus-homework3-ingress
 
 

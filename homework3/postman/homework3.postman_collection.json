@@ -55,13 +55,18 @@
 			"response": []
 		},
 		{
-			"name": "DELETE",
+			"name": "PUT",
 			"request": {
-				"method": "DELETE",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": ""
+					"raw": "{\r\n\"username\" : \"Ivanov\",\r\n\"firstName\" : \"Иван\",\r\n\"lastName\" : \"Иванович\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
 				},
 				"url": {
 					"raw": "http://arch.homework/user/{{userId}}",
@@ -79,18 +84,13 @@
 			"response": []
 		},
 		{
-			"name": "PUT",
+			"name": "DELETE",
 			"request": {
-				"method": "PUT",
+				"method": "DELETE",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\"username\" : \"Ivanov\",\r\n\"firstName\" : \"Иван\",\r\n\"lastName\" : \"Иванович\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+					"raw": ""
 				},
 				"url": {
 					"raw": "http://arch.homework/user/{{userId}}",
@@ -131,7 +131,7 @@
 	"variable": [
 		{
 			"key": "userId",
-			"value": "7",
+			"value": "1",
 			"type": "string"
 		}
 	]
