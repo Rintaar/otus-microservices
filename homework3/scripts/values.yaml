@@ -1,0 +1,9 @@
+auth:
+  enablePostgresUser: true
+  postgresPassword: "postgres"
+  username: "postgres"
+  password: "postgres"
+  database: "postgres"
+architecture: standalone
+containerPorts:
+  postgresql: 5432
